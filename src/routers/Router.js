@@ -6,6 +6,7 @@ import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import AddReview from "../privateRoute/addReview/AddReview";
 import AddServices from "../privateRoute/addServices/AddServices";
+import PrivateRoute from "../privateRoute/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -26,11 +27,11 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addreview',
-                element: <AddReview></AddReview>
+                element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
             },
             {
                 path:'/addservices',
-                element: <AddServices></AddServices>
+                element: <PrivateRoute><AddServices></AddServices></PrivateRoute>
             },
             {
                 path:'/blog',

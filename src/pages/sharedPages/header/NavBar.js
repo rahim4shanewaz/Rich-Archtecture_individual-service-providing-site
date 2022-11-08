@@ -43,6 +43,9 @@ const NavBar = () => {
                     <ul className="menu menu-horizontal gap-3 p-0">
                        <Link to='/'> <button>Home</button> </Link>
                        <Link to='/blog'> <button>Blog</button> </Link>
+                       <Link to='/addreview'> <button>Add Review</button> </Link>
+                       <Link to='/addservices'> <button>Add Services</button> </Link>
+
                        <Link to='/login'> <button>LogIn</button> </Link>
                        <Link to='/register'> <button>Register</button> </Link>
                        <button onClick={handleLogout}>Logout</button>
