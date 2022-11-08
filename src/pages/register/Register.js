@@ -76,100 +76,114 @@ const Register = () => {
 
 
     return (
-        <div className=" min-h-screen bg-base-200  lg:flex ">
-           
-
-
-                <div className='bg-green-700  lg:w-2/5 lg:flex justify-end items-center   lg:min-h-screen'>
-
-                    <div className='sm:w-full lg:w-5/6 sm:h-full lg:h-4/5 bg-green-700 drop-shadow-xl sdw'>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi fugiat iure ex, iusto voluptatibus ad labore fuga maxime possimus, laborum quae. Deleniti sed laboriosam ipsam nemo recusandae sapiente impedit dolore.</p>
+        <div className=" min-h-screen w-full">
+            <div className='flex flex-col min-h-screen w-full justify-center items-center'>
+                    <div className='text-2xl'>
+                        <h1>Register</h1>
                     </div>
 
-                </div>
- <div className='bg-slate-50 lg:w-3/5 flex items-center  min-h-screen '>
-    <div className=' bg-white sm:h-full lg:h-4/5 sm:w-full  lg:w-5/6 drop-shadow-xl flex justify-center items-center  sdw'>
+
+                    <div className='w-2/5 flex flex-col justify-around '>
+                        <form onSubmit={handleSubmit}>
+                                    
+                                    <div className="form-control">
+                                        
+                                        <input type="text" name='name' placeholder="Full  Name" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                    </div>
+                                    
+                                    
+
+                                    
 
 
 
-    <div className='m-10 '>
-                            <div>
-                                <h1 className='text-2xl text-center mt-5 mb-5'>Register</h1>
+                                    <div className='flex gap-5'>
+                                    <div className="form-control w-full">
+                                        
+                                        <input type="email" name='email' placeholder="Email" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400"/>
+                                    </div>
+                                            <div className="form-control w-full">
+                                            
+                                            <input type="Password" name='password' placeholder="Password" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                            </div>  
+                                            </div>     
+
+
+                                            <div className="form-control">
+                                        
+                                        <input type="text" name='imgUrl' placeholder="Image URL" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                    </div>
+
+
+                                            
+            
+                                            
+                                    
+        
+                        </form>
+
+                        <div className='flex gap-2'>
+                            <div> <input onClick={handleAccepted} type="checkbox"    />
                             </div>
-                            <div>
-
-
-                                <form onSubmit={handleSubmit}>
-                                 
-                                  <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text"> Full Name</span>
-                                        </label>
-                                        <input type="text" name='name' placeholder="name" className="input input-bordered rounded-none input-sm w-full max-w-xs" />
-                                    </div>
-                                  
-                                  
-
-                                  <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Image URL</span>
-                                        </label>
-                                        <input type="text" name='imgUrl' placeholder="URL" className="input input-bordered input-sm w-full rounded-none max-w-xs" />
-                                    </div>
+                                <div>
+                                <span className="label-text"><NavLink className={ 'text-emerald-500'} to='/terms'>Terms and Conditions</NavLink></span>
+                                </div>
+                        </div>
 
 
 
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text">Email</span>
-                                        </label>
-                                        <input type="email" name='email' placeholder="email" className="input input-bordered rounded-none input-sm w-full max-w-xs" />
-                                    </div>
-                                    <div className="form-control">
-                                            <label className="label">
-                                                <span className="label-text">Password</span>
-                                            </label>
-                                            <input type="Password" name='password' placeholder="password" className="input input-bordered rounded-none input-sm w-full max-w-xs" />
 
+                                         <div className='w-full'>
+                                          <button disabled={!accepted} className="btn mt-3 w-full  max-w-xs rounded-xl btn-sm outline-none border-none sdw bg-lime-500">Register</button>
+                                          </div>
+                                          <div className='w-full'>
+                                           <button onClick={handleGoogleSignIn} className="btn w-full mt-3  max-w-xs rounded-xl btn-sm outline-none border-none sdw bg-lime-500">Continue with Google</button>
+                                           </div>
+
+
+                                           <div className='mt-10'>
+                                               <p> Already have an account?<Link to='/login'><button className="text-green-400  btn btn-link">Login</button> </Link> </p>
+                                            </div>
+                    </div>
+            
+            
+
+
+                    <div className='w-full flex flex-col items-center justify-center'>
+
+                    
+                                            {/* <div className='w-full flex flex-col items-center justify-center'>
+                                          <div className='w-full'>
+                                          <button disabled={!accepted} className="btn mt-3 w-full  max-w-xs rounded-xl btn-sm outline-none border-none sdw bg-lime-500">Register</button>
+                                          </div>
 
                                           
-                                            <button disabled={!accepted} className="btn mt-3 max-w-xs rounded-none btn-sm btn-outline">Register</button>
-
-                                           
-                                            <button onClick={handleGoogleSignIn} className="btn mt-3 max-w-xs rounded-none btn-sm btn-outline">Continue with Google</button>
-                                            <div  className=" flex gap-2">
-          
-          <div> <input onClick={handleAccepted} type="checkbox"    />
-          </div>
-              <div>
-              <span className="label-text"><NavLink className={ 'text-emerald-500'} to='/terms'>Terms and Conditions</NavLink></span>
-              </div>
-
-
-               </div>
-                                                <div>
-                                                <p> Already have an account?<Link to='/login'><button className="text-green-400  btn btn-link">Login</button> </Link> </p>
-                                                </div>
-                                            
-                                    </div>
-        
-                                </form>
-            
-              
-                            </div>
-
-     </div>
-
-
-
-
-    </div>
-
-</div>
-
-
-
+                                           <div className='w-full'>
+                                           <button onClick={handleGoogleSignIn} className="btn w-full mt-3  max-w-xs rounded-xl btn-sm outline-none border-none sdw bg-lime-500">Continue with Google</button>
+                                           </div>
+                                            </div> */}
+                                              
+                                        
          
+        {/* <div className='flex'>
+        <div> <input onClick={handleAccepted} type="checkbox"    />
+         </div>
+             <div>
+             <span className="label-text"><NavLink className={ 'text-emerald-500'} to='/terms'>Terms and Conditions</NavLink></span>
+             </div>
+        </div> */}
+
+
+              
+             {/* <div>
+                                               <p> Already have an account?<Link to='/login'><button className="text-green-400  btn btn-link">Login</button> </Link> </p>
+            </div> */}
+                    </div>
+            </div>
+
+            
+
+           
       </div>
     );
 };
