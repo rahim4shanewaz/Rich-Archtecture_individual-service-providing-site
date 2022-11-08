@@ -1,8 +1,49 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../Context/ContextApi';
 import './Login.css'
 
 const Login = () => {
+    const [error, setError] = useState('');
+    const {signIn} = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
+
+
+
+    //login function
+
+    const HandleSubmit = event =>{
+        event.preventDefault();
+        const form = event.target;
+        
+        
+        const email= form.email.value;
+        const password= form.password.value;
+        console.log(email, password)
+       
+    
+        signIn(email,password)
+        .then(result => {
+          const user = result.user;
+          
+          form.reset();
+          setError('');
+          navigate(from, {replace: true});
+          
+          
+      })
+      .catch( error => {
+          console.error(error);
+          setError(error.message)
+      })
+    
+        
+      }
+
+
+
     return (
         <div className=" min-h-screen bg-base-200 lg:flex">
            
@@ -19,23 +60,26 @@ const Login = () => {
                             <div>
 
 
-                                <form>
+                                <form onSubmit={HandleSubmit}>
                                   
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text text-black">Email</span>
                                         </label>
-                                        <input type="email" placeholder="email" className="input input-bordered border-black rounded-none bg-green-700  input-sm w-full max-w-xs" />
+                                        <input type="email"
+                                        name='email' placeholder="email" className="input input-bordered border-black rounded-none bg-green-700  input-sm w-full max-w-xs" />
                                     </div>
                                     <div className="form-control">
                                             <label className="label">
                                                 <span className="label-text text-black">Password</span>
                                             </label>
-                                            <input type="Password" placeholder="password" className="input input-bordered border-black rounded-none input-sm bg-green-700 w-full max-w-xs" />
+                                            <input type="Password" 
+                                            name='password' placeholder="password" className="input input-bordered border-black rounded-none input-sm bg-green-700 w-full max-w-xs" />
 
 
                                           
                                             <button className="btn mt-3  max-w-xs rounded-none btn-sm btn-outline">Log In</button>
+                                            <div ><p className='text-red'>{error}</p></div>
                                                 <div>
                                                 <p> Don't Have account?<Link to='/register'><button className="text-green-400  btn btn-link">Register</button> </Link> </p>
                                                 </div>
@@ -43,6 +87,7 @@ const Login = () => {
                                     </div>
         
                                 </form>
+                                
                             </div>
 
                          </div>

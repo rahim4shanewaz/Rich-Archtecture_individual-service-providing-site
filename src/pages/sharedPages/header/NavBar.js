@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Context/ContextApi';
 
 const NavBar = () => {
+    const {user, logOut} = useContext(AuthContext)
+    const handleLogout = () => {
+        logOut()
+          .then(() =>{})
+          .catch( error => console.error(error));
+      }
+
     return (
+        
 
         <div>
 
             <div className="flex flex-col w-full">
-                <div className="flex flex-col justify-end drop-shadow px-28 card bg-base-300 rounded-none place-items-center h-40 ">
+                <div className=" relative drop-shadow  card bg-base-300 rounded-none place-items-center h-52  ">
                             <div>
                             </div>
                         
-                            <div className="navbar bg-neutral text-neutral-content">
+                            <div className="navbar bg-neutral  text-neutral-content absolute bottom-12 w-4/5">
 
 
                 <div className="navbar-start ">
@@ -36,6 +45,16 @@ const NavBar = () => {
                        <Link to='/blog'> <button>Blog</button> </Link>
                        <Link to='/login'> <button>LogIn</button> </Link>
                        <Link to='/register'> <button>Register</button> </Link>
+                       <button onClick={handleLogout}>Logout</button>
+
+                       <div>
+                       { user?.uid &&
+                <div className='img-box' >
+                { <span><p>{user.displayName}</p></span> }
+                </div>
+              }
+                       </div>
+
                     
                     </ul>
                 </div>
