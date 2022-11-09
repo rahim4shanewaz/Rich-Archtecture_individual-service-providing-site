@@ -1,7 +1,10 @@
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+
+import { AuthContext } from '../../Context/ContextApi';
 
 const AddServices = () => {
+
+    const {user} = useContext(AuthContext);
 
 
     const handlePlaceService = event => {
@@ -27,11 +30,11 @@ const AddServices = () => {
             length: length,
             rating: rating,
             description: descriptions,
-            reviews: [null]
+            user
         }
 
 
-        fetch('http://localhost:5000/service', {
+        fetch('http://localhost:5000/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,18 +52,7 @@ const AddServices = () => {
                 }
             })
             .catch(er => console.error(er));
-
-
-
-
     }
-
-
-
-
-
-
-
     return (
         <div className="  bg-base-200 relative  lg:flex ">
         
