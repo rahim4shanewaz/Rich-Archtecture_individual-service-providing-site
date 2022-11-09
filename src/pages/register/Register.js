@@ -126,7 +126,7 @@ const Register = () => {
                             <div> <input onClick={handleAccepted} type="checkbox"    />
                             </div>
                                 <div>
-                                <span className="label-text"><NavLink className={ 'text-emerald-500'} to='/terms'>Terms and Conditions</NavLink></span>
+                                <span className="label-text"><NavLink className='text-lime-500'to='/terms'>Terms and Conditions</NavLink></span>
                                 </div>
                         </div>
 
@@ -142,7 +142,7 @@ const Register = () => {
 
 
                                            <div className='mt-10'>
-                                               <p> Already have an account?<Link to='/login'><button className="text-green-400  btn btn-link">Login</button> </Link> </p>
+                                               <p> Already have an account?<Link to='/login'><button className="text-lime-500  btn btn-link">Login</button> </Link> </p>
                                             </div>
                     </div>
             

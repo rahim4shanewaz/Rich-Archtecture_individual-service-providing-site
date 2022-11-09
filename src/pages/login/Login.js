@@ -1,3 +1,5 @@
+import { faEnvelope, faUser, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/ContextApi';
@@ -47,16 +49,19 @@ const Login = () => {
     return (
      <div className='w-full min-h-screen'>
         <div className='flex flex-col min-h-screen w-full justify-center items-center'>
-            <div className='text-2xl'>
+            <div className='text-2xl text-center'>
+                <FontAwesomeIcon className='text-6xl' icon={faUsers}></FontAwesomeIcon>
                 <h1>Login</h1>
             </div>
        <div className='w-1/4 flex flex-col justify-around gap-28'>
        <form onSubmit={HandleSubmit}>
                                   
                                   <div className="form-control">
+                                   <div className='flex justify-center items-center gap-2'>
+                                   <FontAwesomeIcon className='text-xl' icon={faEnvelope}></FontAwesomeIcon>
                                       
-                                      <input type="email"
-                                      name='email' placeholder="Email" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+            <input  type="email" name='email' placeholder="&#xf0e0" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                   </div>
                                   </div>
 
                                   
