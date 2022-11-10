@@ -38,11 +38,11 @@ const AddServices = () => {
         }
 
 
-        fetch('http://localhost:5000/addservice', {
+        fetch('https://assignment-11-sever.vercel.app/addservice', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                
+
                 authorization: `Bearer ${localStorage.getItem('genius-token')}`
                
             },

@@ -9,7 +9,7 @@ const ServicesAndRevews = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/userServices?email=${user?.email}`)
+        fetch(`https://assignment-11-sever.vercel.app/userServices?email=${user?.email}`)
             .then(res => {
                 if (res.status === 401 || res.status === 403) {
                     return logOut();
