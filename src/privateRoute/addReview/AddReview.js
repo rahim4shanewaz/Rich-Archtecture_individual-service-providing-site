@@ -1,11 +1,12 @@
 import { faComment } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { AuthContext } from '../../Context/ContextApi';
 
 const AddReview = () => {
 
     const {user} = useContext(AuthContext);
+    const [review, setReview] = useState([])
 
     const handlePlaceReview = event => {
 
@@ -40,6 +41,19 @@ const AddReview = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
+
+                    if (data.deletedCount > 0) {
+
+
+                        alert('deleted successfully');
+                        const remaining = review.filter(odr => odr._id !== id);
+                        setReview(remaining);
+
+
+
+
+
+                    }
                     alert('service placed successfully')
                     form.reset();
                     
