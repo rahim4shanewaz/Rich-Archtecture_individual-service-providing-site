@@ -1,7 +1,7 @@
 import { faLandmark, faLocationDot, faMobile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../../Context/ContextApi';
 import Header from './Header';
 
@@ -41,13 +41,13 @@ const NavBar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral  rounded-none w-52">
 
                         <li><div>
-                      <Link to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </Link>
+                      <NavLink to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </NavLink>
                       </div></li>
                         <li><div>
-                      <Link to='/blog'> <button className='border px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
+                      <NavLink to='/blog'> <button className='border px-3 py-2 hover:bg-lime-400'>Blog</button> </NavLink>
                       </div></li>
                         <li><div>
-                      <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
+                      <NavLink to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </NavLink>
                       </div></li>
                         
                        
@@ -60,13 +60,13 @@ const NavBar = () => {
                    <small> 
                     <ul className="menu text-black menu-horizontal navFonts gap-3 p-0">
                       <div>
-                      <Link to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </Link>
+                      <NavLink to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </NavLink>
                       </div>
                       <div>
-                      <Link to='/blog'> <button className=' px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
+                      <NavLink to='/blog'> <button className=' px-3 py-2 hover:bg-lime-400'>Blog</button> </NavLink>
                       </div>
                       <div>
-                      <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
+                      <NavLink to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </NavLink>
                       </div>
 
 
@@ -92,10 +92,10 @@ const NavBar = () => {
 
                      <div className='flex'>
                      <div>
-                      <Link to='/login'> <button className=' px-3 py-2 hover:bg-lime-400'>LogIn</button> </Link>
+                      <NavLink to='/login'> <button className=' px-3 py-2 hover:bg-lime-400'>LogIn</button> </NavLink>
                       </div>
                       <div>
-                      <Link to='/register'> <button className=' px-3 py-2 hover:bg-lime-400'>Register</button> </Link>
+                      <NavLink to='/register'> <button className=' px-3 py-2 hover:bg-lime-400'>Register</button> </NavLink>
                       </div>
 
 
@@ -107,10 +107,10 @@ const NavBar = () => {
 
 
                        <div>
-                      <Link to='/service.reviews'> <button className=' px-3 py-2 hover:bg-lime-400'>Services and Reviews</button> </Link>
+                      <NavLink to='/service.reviews'> <button className=' px-3 py-2 hover:bg-lime-400'>Services and Reviews</button> </NavLink>
                       </div>
                       <div>
-                      <Link to='/addservices'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Services</button> </Link>
+                      <NavLink to='/addservices'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Services</button> </NavLink>
                       </div>
                      </div>
                               }
