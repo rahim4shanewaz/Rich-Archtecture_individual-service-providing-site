@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const ServiceDetails = () => {
 
@@ -15,6 +16,38 @@ const ServiceDetails = () => {
 
           <div  className="card box rounded-none p-3  lg:card-side bg-base-100 shadow-xl">
           <figure><img className='' src={service.img} alt="Album"/></figure>
+          <figure>
+            
+            
+            
+        {/* <PhotoProvider>
+      <PhotoView src={service.img}>
+        <img src={service.img} alt="" />
+      </PhotoView>
+    </PhotoProvider> */}
+          
+          
+          
+          
+          
+          </figure>
+
+         
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
           <div    className="card-body lg:w-2/5">
               <div className='p-2'>
               <h2 className="card-title  text-5xl">{service.title}</h2>
