@@ -50,12 +50,12 @@ const AddReview = () => {
 
 
     return (
-        <div className='w-full min-h-screen mt-5' >
+        <div className='w-full' >
             <div className='flex flex-col min-h-screen w-full justify-center items-center'>
             <div className='text-2xl text-center'>
                 <FontAwesomeIcon className='text-6xl' icon={faComment}></FontAwesomeIcon>
                <div className='p-10'>
-               <h1 className='headerFont font-bold text-4xl'>Login</h1>
+               <h1 className='headerFont font-bold text-4xl'> AD YOUR REVIEW</h1>
                </div>
             </div>
 
@@ -63,41 +63,21 @@ const AddReview = () => {
                               <div>
                               <form onSubmit={handlePlaceReview} >
                                  
+                                 <div className='flex gap-5'>
                                  <div className="form-control">
-                                       {/* <label className="label">
-                                           <span className="label-text"> Add Your Review </span>
-                                       </label> */}
-                                       <input type="text" name='review' placeholder="Add Your Review"  className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
-                                   </div>
+                                      
+                                      <input type="text" name='review' placeholder="Add Your Review"  className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                  </div>
 
-                                   {/* <div className="form-control">
-                                        
-                                        <input type="text" name='name' placeholder="Full  Name" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
-                                    </div> */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                                
+                                  <div className="form-control">
+                                     
+                                      <input type="text" name='rating' placeholder="Give Your Rating" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                  </div>
+                                 </div>
 
                                    <div className="form-control">
-                                       {/* <label className="label">
-                                           <span className="label-text">Rating</span>
-                                       </label> */}
-                                       <input type="text" name='rating' placeholder="Give Your Rating" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
-                                   </div>
-
-                                   <div className="form-control">
-                                           <button className="btn mt-3 max-w-xs rounded-none btn-sm btn-outline">Add Your Services</button>
+                                           <button className="btn mt-3 max-w-xs rounded-none btn-sm btn-outline">Submit</button>
   
                                    </div>
        

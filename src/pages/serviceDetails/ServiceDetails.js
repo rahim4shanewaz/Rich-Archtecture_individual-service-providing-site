@@ -1,6 +1,8 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
+import AddReview from '../../privateRoute/addReview/AddReview';
+import Review from '../../components/Review';
 
 const ServiceDetails = () => {
 
@@ -16,39 +18,10 @@ const ServiceDetails = () => {
 
           <div  className="card box rounded-none p-3  lg:card-side bg-base-100 shadow-xl">
           <figure><img className='' src={service.img} alt="Album"/></figure>
-          <figure>
-            
-            
-            
-        {/* <PhotoProvider>
-      <PhotoView src={service.img}>
-        <img src={service.img} alt="" />
-      </PhotoView>
-    </PhotoProvider> */}
-          
-          
-          
-          
-          
-          </figure>
-
-         
-          
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-          <div    className="card-body lg:w-2/5">
+          <div    className="card-body lg:w-full">
               <div className='p-2'>
               <h2 className="card-title  text-5xl">{service.title}</h2>
               <hr />
@@ -56,7 +29,12 @@ const ServiceDetails = () => {
               <hr />
               <p className='text-2xl '>Price:   ${service.price}</p>
               {/* <p className='text-xl'>Duration:  {course.duration} <small>month</small> </p> */}
-              <p className='text-xl'>Rating: {service.rating}</p>
+              <p className='text-xl mb-2'>Rating: {service.rating}</p>
+              <hr />
+              <p className='mt-2'>
+                {service.description}
+              </p>
+
               </div>
               <div className="card-actions justify-end">
 
@@ -72,6 +50,23 @@ const ServiceDetails = () => {
 
 
       </div>
+
+     
+      {/* <Review></Review> */}
+
+      <div className='px-10 mx-10'>
+    
+        
+        {
+          service.reviews.map(review => 
+            <Review key={review.name}
+            review={review}></Review>)
+        }
+      </div>
+      <AddReview></AddReview>
+
+
+     
             
         </div>
     );
