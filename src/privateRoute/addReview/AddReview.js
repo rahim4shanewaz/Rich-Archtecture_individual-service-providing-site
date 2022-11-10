@@ -1,3 +1,5 @@
+import { faComment } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Context/ContextApi';
 
@@ -48,20 +50,50 @@ const AddReview = () => {
 
 
     return (
-        <div>
-             <form onSubmit={handlePlaceReview} >
+        <div className='w-full min-h-screen mt-5' >
+            <div className='flex flex-col min-h-screen w-full justify-center items-center'>
+            <div className='text-2xl text-center'>
+                <FontAwesomeIcon className='text-6xl' icon={faComment}></FontAwesomeIcon>
+               <div className='p-10'>
+               <h1 className='headerFont font-bold text-4xl'>Login</h1>
+               </div>
+            </div>
+
+            
+                              <div>
+                              <form onSubmit={handlePlaceReview} >
                                  
                                  <div className="form-control">
-                                       <label className="label">
+                                       {/* <label className="label">
                                            <span className="label-text"> Add Your Review </span>
-                                       </label>
-                                       <input type="text" name='review' placeholder="Review" className="input input-bordered rounded-none input-sm w-full " />
+                                       </label> */}
+                                       <input type="text" name='review' placeholder="Add Your Review"  className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
                                    </div>
+
+                                   {/* <div className="form-control">
+                                        
+                                        <input type="text" name='name' placeholder="Full  Name" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
+                                    </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                                    <div className="form-control">
-                                       <label className="label">
+                                       {/* <label className="label">
                                            <span className="label-text">Rating</span>
-                                       </label>
-                                       <input type="text" name='rating' placeholder="rating" className="input input-bordered rounded-none input-sm w-full " />
+                                       </label> */}
+                                       <input type="text" name='rating' placeholder="Give Your Rating" className=" p-2 pl-0 outline-none  w-full mb-5  border-b-2 border-gray-400" />
                                    </div>
 
                                    <div className="form-control">
@@ -70,7 +102,9 @@ const AddReview = () => {
                                    </div>
        
                                </form>
+                              </div>
             
+        </div>
         </div>
     );
 };

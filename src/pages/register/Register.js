@@ -1,3 +1,6 @@
+import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useContext, useState } from 'react';
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/ContextApi';
@@ -76,11 +79,14 @@ const Register = () => {
 
 
     return (
-        <div className=" min-h-screen w-full">
+        <div className=" min-h-screen w-full mt-10">
             <div className='flex flex-col min-h-screen w-full justify-center items-center'>
-                    <div className='text-2xl'>
-                        <h1>Register</h1>
-                    </div>
+            <div className='text-2xl text-center'>
+                <FontAwesomeIcon className='text-6xl' icon={faUser}></FontAwesomeIcon>
+               <div className='p-10'>
+               <h1 className='headerFont font-bold text-4xl'>Login</h1>
+               </div>
+            </div>
 
 
                     <div className='w-2/5 flex flex-col justify-around '>
