@@ -1,6 +1,25 @@
+# Live Website Link:
+(https://assignment-11-2e339.web.app/) 
+# important!  please " for JWT checking continue with google"after register reload or log out first time then agin continue with google" 
+# this website is about Architecture services.
+# this project create with react app. tail wind css library.
+# this website hosted in firebase
+# this website database created in MongoDB
+# in This website used, cors, react toastify, JWT, email and  google firebase authentication
+# this website server hosted in vercel 
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+this project create with react app. tail wind css library.
 
 ## Available Scripts
 

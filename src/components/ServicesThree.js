@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import Content from './Content';
 import ServiceCard from './ServiceCard';
 
 const ServicesThree = () => {
@@ -18,13 +19,13 @@ const ServicesThree = () => {
 
 
     return (
-        <div className='my-5 px-10 mx-10'>
-            <div className='text-center mb-4'>
+        <div className='my-5 px-10 mt-10 mx-10'>
+            <div className='text-center headerFont mb-4'>
                 <p className="text-2xl font-bold text-orange-600">Services</p>
                 <h2 className="text-5xl font-semibold">Our Service Area</h2>
-                <p>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+                <p className='text-xl font-bold'>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
             </div>
-            <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 headerFont'>
                 {
                     services.map(service => <ServiceCard
                         key={service._id}
@@ -32,13 +33,21 @@ const ServicesThree = () => {
                     ></ServiceCard>)
                 }
             </div>
-           <div className='flex justify-center m-4'>
+           <div className='flex justify-center m-4 mt-3 mb-2'>
             <div>
-            <Link to={'/allservices'}><button className="btn btn-outline btn-secondary">More Services</button></Link>
+            <Link to={'/allservices'}><button className="btn btn-outline rounded-none btn-success px-10 my-10">See All</button></Link>
+          
+            
             </div>
+           
            </div>
+
+           <Content></Content>
+          
             
         </div>
+        
+    
     );
 };
 

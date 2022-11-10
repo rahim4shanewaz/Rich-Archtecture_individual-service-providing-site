@@ -1,10 +1,17 @@
 import React from 'react';
+import useHooks from '../../components/UseHooks';
 
 const Blog = () => {
+  useHooks('Blog')
     return (
-        <div>
+        <div className='mt-20'>
+          <div className='text-center headerFont mb-4'>
+                <p className="text-2xl font-bold text-orange-600">Blogs</p>
+                <h2 className="text-5xl font-semibold">Here is Some Blogs</h2>
+                <p className='text-xl font-bold'>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+            </div>
           <div className='grid lg:grid-cols-2 mt-10 gap-10 m-10'>
-               <div className='sdw p-5'>
+               <div className=' drop-shadow border bg-slate-50 p-6'>
                 <h1 className='text-4xl mb-2'>
                 Difference between SQL and NoSQL
 
@@ -42,7 +49,7 @@ Great support is available for all SQL database from their vendors. Also a lot o
                </div>
 
 
-               <div className='sdw p-5'>
+               <div className=' drop-shadow border bg-slate-50 p-6'>
                <h1 className='text-4xl mb-2'>
                What is JWT, and how does it work?
 
@@ -66,7 +73,7 @@ There are no mandatory claims for a JWT, but overlaying standards may make claim
 
 The signature ensures that the token hasn’t been altered. The party that creates the JWT signs the header and payload with a secret that is known to both the issuer and receiver, or with a private key known only to the sender. When the token is used, the receiving party verifies that the header and payload match the signature. 
                </div>
-               <div className='sdw p-5'>
+               <div className=' drop-shadow border bg-slate-50 p-6'>
                <h1 className='text-4xl mb-2'>
                What is the difference between javascript and NodeJS?
 
@@ -83,7 +90,7 @@ Javascript is capable enough to add HTML and play with the DOM.
  	Nodejs is written in C, C++ and Javascript. <br />br
  </p>
                </div>
-               <div className='sdw p-5'>
+               <div className=' drop-shadow border bg-slate-50 p-6'>
                <h1 className='text-4xl mb-2'>
                How does NodeJS handle multiple requests at the same time?
 

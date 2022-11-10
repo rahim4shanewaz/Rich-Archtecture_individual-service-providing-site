@@ -3,8 +3,10 @@ import ServicesThree from './ServicesThree';
 
 const Sections = () => {
     return (
-        <div>
+        <div className='my-10'>
+            <hr />
        <ServicesThree></ServicesThree>
+       <hr />
             
         </div>
         

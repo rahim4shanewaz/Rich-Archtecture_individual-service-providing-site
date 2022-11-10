@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
+import { toast } from 'react-toastify';
+import useHooks from '../../components/UseHooks';
 
 import { AuthContext } from '../../Context/ContextApi';
 
 const AddServices = () => {
 
     const {user} = useContext(AuthContext);
+    const notify = () => toast("Service Added");
+    useHooks('Add Service')
 
 
     const handlePlaceService = event => {
@@ -31,8 +35,13 @@ const AddServices = () => {
             rating: rating,
             description: descriptions,
             email: user.email,
-            timestamp1: Date(),
-            timestamp2: new Date(),
+            reviews: {
+                review:'',
+                name:'',
+                img:''
+            },
+            timestamp: new Date(),
+           
 
             user
         }
@@ -42,8 +51,8 @@ const AddServices = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-
-                authorization: `Bearer ${localStorage.getItem('genius-token')}`
+                
+                authorization: `Bearer ${localStorage.getItem('RC-token-login')}`
                
             },
             body: JSON.stringify(service)
@@ -52,15 +61,26 @@ const AddServices = () => {
             .then(data => {
                 console.log(data)
                 if(data.acknowledged){
-                    alert('service placed successfully')
+                    notify()
                     form.reset();
                     
                 }
             })
             .catch(er => console.error(er));
     }
-    return (
-        <div className="  bg-base-200 relative  lg:flex ">
+    return ( 
+        <div className='mt-20'>
+            <div className='text-center headerFont mb-7'>
+                <p className="text-2xl font-bold text-orange-600">Rich Architecture</p>
+                <h2 className="text-5xl font-semibold">Add Your Services</h2>
+                <p className='text-xl font-bold'>the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+            </div>
+
+
+
+
+
+        <div className="  bg-white relative lg:flex ">
         
         <div className='bg-green-700   lg:w-2/5 lg:flex justify-end items-center absolute   '>
         </div>
@@ -68,8 +88,8 @@ const AddServices = () => {
 
 
 
-        <div className='bg-slate-50 lg:w-full py-10 flex items-center  mx-auto  '>
-        <div className=' bg-white sm:h-full   sm:w-full rounded-xl  lg:w-3/5 mx-auto drop-shadow-xl flex justify-center items-center  sdw'>
+        <div className='bg-white lg:w-full py-10 flex items-center  mx-auto  '>
+        <div className=' bg-slate-50 sm:h-full   sm:w-full  lg:w-3/5 mx-auto drop-shadow border rounded-none flex justify-center items-center '>
 
 
 
@@ -84,7 +104,7 @@ const AddServices = () => {
                                        <label className="label">
                                            <span className="label-text"> Services Title </span>
                                        </label>
-                                       <input type="text" name='title' placeholder="title" className="input input-bordered rounded-none input-sm w-full " />
+                                       <input required type="text" name='title' placeholder="title" className="input input-bordered rounded-none input-sm w-full " />
                                    </div>
 
                                    <div className='flex gap-2'>
@@ -92,13 +112,13 @@ const AddServices = () => {
                                        <label className="label">
                                            <span className="label-text">Price</span>
                                        </label>
-                                       <input type="text" name='price' placeholder="price" className="input input-bordered rounded-none input-sm w-full " />
+                                       <input required type="text" name='price' placeholder="price" className="input input-bordered rounded-none input-sm w-full " />
                                    </div>
                                    <div className="form-control">
                                        <label className="label">
                                            <span className="label-text"> Duration Length (days)  </span>
                                        </label>
-                                       <input type="text" name='length' placeholder="length" className="input input-bordered rounded-none input-sm w-full " />
+                                       <input required type="text" name='length' placeholder="length" className="input input-bordered rounded-none input-sm w-full " />
                                    </div>
                                    </div>
                                  
@@ -108,14 +128,14 @@ const AddServices = () => {
                                        <label className="label">
                                            <span className="label-text">Image URL</span>
                                        </label>
-                                       <input type="text" name='img' placeholder="URL" className="input input-bordered w-full rounded-none " />
+                                       <input required type="text" name='img' placeholder="URL" className="input input-bordered w-full rounded-none " />
                                    </div>
 
 
 
                                    <div className="form-control">
                                        <label className="label">
-                                           <span className="label-text">Descriptions</span>
+                                           <span className="label-text">Descriptions - <br /> <span className='text-red-400'>Must enter 150 Characters</span></span>
                                        </label>
                                        {/* <input type="text" name='email' placeholder="Descriptions" className="input input-bordered rounded-none  w-full " /> */}
 
@@ -131,13 +151,13 @@ const AddServices = () => {
 
                                    <div className="form-control">
                                            <label className="label">
-                                               <span className="label-text">Rating</span>
+                                               <span className="label-text">Rating <br /> <span className='text-red-400'>Must enter out of 5</span></span>
                                            </label>
                                            <input type="text" name='rating' placeholder="rating" className="input input-bordered rounded-none  w-full max-w-xs" />
 
 
                                          
-                                           <button className="btn mt-3 max-w-xs rounded-none btn-sm btn-outline">Add Your Services</button>
+                                           <button className="btn mt-3 mb-10 max-w-xs rounded-none btn-sm outline-none border-none sdw bg-lime-500">Add Your Services</button>
   
                                    </div>
        
@@ -152,6 +172,8 @@ const AddServices = () => {
         </div>
 
         </div>
+        </div>
+
     );
 };
 

@@ -1,4 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
+import NotFound from "../components/NotFound";
+import ProductReview from "../components/ProductReview";
 import Main from "../layout/Main";
 import AllServices from "../pages/allServices/AllServices";
 import Blog from "../pages/bolg/Blog";
@@ -50,16 +52,26 @@ const router = createBrowserRouter([
             },
             {
                 path:'/review',
-                element: <AddReview></AddReview>
+                element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
             },
             {
                 path:'serviceDetails/:id',
                 element:<ServiceDetails></ServiceDetails>,
                 loader:  ({params}) => fetch(`https://assignment-11-sever.vercel.app/service/${params.id}`)
 
+            },
+            {
+                path:'productreview/:id',
+                element:<ProductReview></ProductReview>,
+                loader:  ({params}) => fetch(`https://assignment-11-sever.vercel.app/productreviews/${params.id}`)
             }
            
         ]
+
+    },
+    {
+        path:'*',
+        element:<NotFound></NotFound>
 
     }
 ]);
