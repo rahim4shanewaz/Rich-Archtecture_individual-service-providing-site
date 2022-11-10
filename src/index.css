@@ -32,3 +32,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.img-box{
+  height: 35px;
+  width: 35px;
+  background: #dde1e7;
+ 
+  border-radius: 50%;
+  transition:500ms;
+ 
+}
+.img-box img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}

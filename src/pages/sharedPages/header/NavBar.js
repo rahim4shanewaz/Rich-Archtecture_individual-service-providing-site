@@ -1,12 +1,13 @@
 import { faLandmark, faLocationDot, faMobile } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../Context/ContextApi';
 import Header from './Header';
 
 const NavBar = () => {
     const {user, logOut} = useContext(AuthContext)
+    
     const handleLogout = () => {
         logOut()
           .then(() =>{})
@@ -39,10 +40,16 @@ const NavBar = () => {
                     </label>
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-neutral  rounded-none w-52">
 
-                        <li>hageg</li>
-                        <li>hageg</li>
-                        <li>hageg</li>
-                        <li>hageg</li>
+                        <li><div>
+                      <Link to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </Link>
+                      </div></li>
+                        <li><div>
+                      <Link to='/blog'> <button className='border px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
+                      </div></li>
+                        <li><div>
+                      <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
+                      </div></li>
+                        
                        
                     </ul>
                     </div>
@@ -50,33 +57,82 @@ const NavBar = () => {
                    
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                   <small> <ul className="menu text-black menu-horizontal navFonts gap-3 p-0">
-                       <Link to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </Link>
-                       <Link to='/blog'> <button className='border px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
-                       <Link to='/addreview'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Review</button> </Link>
-                       <Link to='/addservices'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Services</button> </Link>
-                       <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
+                   <small> 
+                    <ul className="menu text-black menu-horizontal navFonts gap-3 p-0">
+                      <div>
+                      <Link to='/'> <button className=' px-3 py-2 hover:bg-lime-400'>Home</button> </Link>
+                      </div>
+                      <div>
+                      <Link to='/blog'> <button className=' px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
+                      </div>
+                      <div>
+                      <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
+                      </div>
 
 
 
-                       <Link to='/service.reviews'> <button className=' px-3 py-2 hover:bg-lime-400'>Services and Reviews</button> </Link>
+                      
+                    
+                      
 
 
 
-                       <Link to='/login'> <button className=' px-3 py-2 hover:bg-lime-400'>LogIn</button> </Link>
-                       <Link to='/register'> <button className=' px-3 py-2 hover:bg-lime-400'>Register</button> </Link>
+
+                      <div className='flex'>
+
+                        { user?.uid ?
+
+                      <div>
                        <button className='border px-3 py-2 hover:bg-lime-400' onClick={handleLogout}>Logout</button>
+                       </div> :
+
+                     
+
+
+
+                     <div className='flex'>
+                     <div>
+                      <Link to='/login'> <button className=' px-3 py-2 hover:bg-lime-400'>LogIn</button> </Link>
+                      </div>
+                      <div>
+                      <Link to='/register'> <button className=' px-3 py-2 hover:bg-lime-400'>Register</button> </Link>
+                      </div>
+
+
+
+
+                       
+
+
+
 
                        <div>
-                       { user?.uid &&
-                <div className='img-box' >
-                { <span><p>{user.displayName}</p></span> }
+                      <Link to='/service.reviews'> <button className=' px-3 py-2 hover:bg-lime-400'>Services and Reviews</button> </Link>
+                      </div>
+                      <div>
+                      <Link to='/addservices'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Services</button> </Link>
+                      </div>
+                     </div>
+                              }
+                      </div>
+
+                      <div>
+              { user?.uid &&
+                <div className='img-box' title={user.displayName}>
+                { <span><img className='w-100 h-100' src={user.photoURL} alt="" /> </span> }
                 </div>
               }
-                       </div>
+              </div>
+             
+
+
+
+                    
 
                     
                     </ul> </small>
+
+             
                 </div>
                 {/* <div className="navbar-end">
                     <a className="btn">Get started</a>
@@ -96,6 +152,7 @@ const NavBar = () => {
                                     <h1>Dhaka, Bangladesh</h1>
                                 </div>
                             </div>
+
                             <div className='flex items-center gap-3'>
                                 <div><FontAwesomeIcon className='text-4xl text-slate-400' icon={faMobile}></FontAwesomeIcon></div>
                                 <div>
@@ -106,6 +163,8 @@ const NavBar = () => {
                                     
                                 </div>
                             </div>
+             
+
                            </div>
                             
                 </div> 

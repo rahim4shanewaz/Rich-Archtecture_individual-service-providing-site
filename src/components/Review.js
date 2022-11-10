@@ -2,7 +2,7 @@ import React from 'react';
 
 const Review = ({review}) => {
     return (
-        <div className='mb-5'>
+        <div className='mb-5  p-10 sdw'>
 
             <div className='flex gap-5'>
                             <div>

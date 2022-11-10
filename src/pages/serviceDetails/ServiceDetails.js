@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
-import { PhotoProvider, PhotoView } from 'react-photo-view';
+
 import AddReview from '../../privateRoute/addReview/AddReview';
 import Review from '../../components/Review';
 
@@ -10,7 +10,7 @@ const ServiceDetails = () => {
 
     const service = useLoaderData();
     return (
-        <div>
+        <div className='mt-10'>
 
 <div  className='flex flex-col justify-center  p-20 pt-5'>
           
