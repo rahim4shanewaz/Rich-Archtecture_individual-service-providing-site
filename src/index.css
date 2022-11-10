@@ -6,7 +6,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue' ,'Cairo',
-    sans-serif;
+    sans-serif, 'cursive' ;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   
@@ -14,6 +14,16 @@ body {
 .fonts{
   
     font-family: 'Cairo', sans-serif;
+}
+.navFonts{
+  font-family: 'Space Grotesk', sans-serif;
+}
+.headerFont{
+  font-family: 'Poiret One', cursive;
+}
+
+.logoFont{
+  font-family: 'Petit Formal Script', cursive;
 }
 .sdw{
   box-shadow: 4px 6px 10px 4px rgba(0, 0, 0, 0.2), 4px 8px 20px 4px rgba(0, 0, 0, 0.19);
