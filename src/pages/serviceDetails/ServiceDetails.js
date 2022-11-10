@@ -18,12 +18,19 @@ const ServiceDetails = () => {
 
   const service = useLoaderData();
 
+
+
+//spinner function
  const [reload,  setReload] = useState(true);
 
 
  const notify = () => toast("Review Added");
+
+ //dynamic title
  useHooks(`${service.title}`)
 
+
+//review add function
   const handlePlaceReview = event => {
 
 

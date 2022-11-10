@@ -56,8 +56,12 @@ const ServicesAndRevews = () => {
 
 
 
+//    tastify
 
     const notify1 = () => toast("Service Deleted");
+
+
+    //delete added service
 
     const handleDeleteService= id => {
         const proceed = window.confirm('Are you sure, you want to cancel this Service');
@@ -91,7 +95,7 @@ const ServicesAndRevews = () => {
 
     const notify = () => toast("Review Deleted");
 
-    
+    //delete added review
     const handleDeleteReview = id => {
         const proceed = window.confirm('Are you sure, you want to cancel this Review');
        

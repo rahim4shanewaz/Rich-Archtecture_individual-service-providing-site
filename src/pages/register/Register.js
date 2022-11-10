@@ -22,7 +22,7 @@ const Register = () => {
     useHooks('Register')
 
 
-
+// register with email and pass
     const handleSubmit = event =>{
         event.preventDefault();
         const form = event.target;

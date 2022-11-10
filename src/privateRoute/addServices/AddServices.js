@@ -26,6 +26,10 @@ const AddServices = () => {
 
         console.log(title,price,length,img,descriptions,rating );
 
+
+
+        // send user data and added services data to database
+
         const service = {
 
             title: title,
@@ -51,7 +55,7 @@ const AddServices = () => {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
-                
+                //get jwt token from local storage
                 authorization: `Bearer ${localStorage.getItem('RC-token-login')}`
                
             },

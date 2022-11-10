@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import useHooks from './UseHooks';
 
+
+
+
+
+
+
+//404 page
 const NotFound = () => {
   useHooks('Not Found')
     return (

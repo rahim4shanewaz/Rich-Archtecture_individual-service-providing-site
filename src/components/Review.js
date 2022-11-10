@@ -9,7 +9,7 @@ const Review = ({review}) => {
                             <mark class="highlighted_selection" >
                                 <div className="avatar">
                                             <div className="w-10 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                                                      
+     {/* this part for user review and default review */}
 {review?.user ?
 
                                                          <div title={review.user.displayName}>
