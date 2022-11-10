@@ -55,6 +55,7 @@ const NavBar = () => {
                        <Link to='/blog'> <button className='border px-3 py-2 hover:bg-lime-400'>Blog</button> </Link>
                        <Link to='/addreview'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Review</button> </Link>
                        <Link to='/addservices'> <button className=' px-3 py-2 hover:bg-lime-400'>Add Services</button> </Link>
+                       <Link to='/allservices'> <button className=' px-3 py-2 hover:bg-lime-400'>All Services</button> </Link>
 
 
 

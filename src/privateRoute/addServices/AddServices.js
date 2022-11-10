@@ -30,6 +30,10 @@ const AddServices = () => {
             length: length,
             rating: rating,
             description: descriptions,
+            email: user.email,
+            timestamp1: Date(),
+            timestamp2: new Date(),
+
             user
         }
 

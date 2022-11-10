@@ -32,6 +32,12 @@ const ServicesThree = () => {
                     ></ServiceCard>)
                 }
             </div>
+           <div className='flex justify-center m-4'>
+            <div>
+            <Link to={'/allservices'}><button className="btn btn-outline btn-secondary">More Services</button></Link>
+            </div>
+           </div>
+            
         </div>
     );
 };

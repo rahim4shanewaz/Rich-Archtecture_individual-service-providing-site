@@ -23,9 +23,9 @@ const ServicesAndRevews = () => {
 
 
     return (
-        <div>
+        <div className='mt-10'>
             <div>
-                <h1>Service added by this {user.displayName}: 
+                <h1>Service added by this {user.email}: 
                     {
                        service.length 
                     }

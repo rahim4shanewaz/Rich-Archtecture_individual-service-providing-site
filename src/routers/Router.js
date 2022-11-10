@@ -50,7 +50,8 @@ const router = createBrowserRouter([
             {
                 path:'/review',
                 element: <AddReview></AddReview>
-            }
+            },
+           
         ]
 
     }
